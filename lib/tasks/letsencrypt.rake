@@ -52,7 +52,7 @@ namespace :letsencrypt do
 
       # Get the domain name from Heroku
       hostname = heroku.domain.list(heroku_app).first['hostname']
-      open("http://#{hostname}/#{challenge.filename}").read
+      open("https://#{hostname}/#{challenge.filename}").read
       puts "Done!"
 
       print "Giving LetsEncrypt some time to verify..."
